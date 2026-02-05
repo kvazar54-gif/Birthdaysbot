@@ -21,7 +21,8 @@ class Celebrant(StatesGroup):
 @router.message(CommandStart())
 async def cmd_start(message: Message):
     await rq.set_user(message.from_user.id)
-    await message.answer('Привет! Я бот для создания напоминаний о днях рождения.',
+    await message.answer('Привет! Я бот для создания напоминаний о днях рождения. '
+                         'Напоминания приходят за 3 дня и в день празника в 9:00 Мск',
                     reply_markup=kb.main)
 
 
